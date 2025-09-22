@@ -64,8 +64,8 @@ npm run dev
 
 ## 📸 Preview  
 
-![Home Page](./public/image.png)
-![About Page](./public/image2.png)
+![Home Page](/image.png)
+![About Page](/image2.png)
 
 ---
 
