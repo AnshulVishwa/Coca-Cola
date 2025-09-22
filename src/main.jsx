@@ -72,12 +72,10 @@ function App() {
   const [prevCan , setPrevCan] = useState("/coca-coka.glb")
   useEffect( () => {
     if(containerRef.current){
-      gsap.set( containerRef.current , {
-        x : "50%"
-      } )
+
       gsap.to( containerRef.current , {
-        y : "150vh",
-        x:"0%",
+        y : "130vh",
+        x:"-70%",
         scrollTrigger : {
           trigger : "#root",
           start : "top",
@@ -88,14 +86,15 @@ function App() {
   } , [] )
   return (
     <>
+    <div className="upperDiv">
       <h1>Coca<pre>   </pre>Cola</h1>
-      <div style={{position:"absolute",zIndex:"5"}}>
-        <button onClick={() => {setPrevCan(can); setCan("/coca-coka.glb")}}>Bottle1</button>
-        <button onClick={() => {setPrevCan(can); setCan("/cola_can.glb")}}>Bottle2</button>
-        <button onClick={() => {setPrevCan(can); setCan("/french_coke_light_can.glb")}}>Bottle3</button>
+      <div  style={{position:"absolute",zIndex:"5",top:"5%"}}>
+        <button class="buttons b1" onClick={() => {setPrevCan(can); setCan("/coca-coka.glb")}}>Bottle1</button>
+        <button class="buttons b2" onClick={() => {setPrevCan(can); setCan("/cola_can.glb")}}>Bottle2</button>
+        <button class="buttons b3" onClick={() => {setPrevCan(can); setCan("/french_coke_light_can.glb")}}>Bottle3</button>
       </div>
       <div ref={containerRef} style={{ height: "500px", width: "50%" }}>
-        <Canvas style={{height:"100%",width:"100%"}} camera={{ position: [0, 0, 3], fov: 45 }}>
+        <Canvas style={{height:"100%",width:"100%",transform:"translate(0,0)"}} camera={{ position: [0, 0, 3], fov: 45 }}>
           <ambientLight intensity={0.2} />
           <directionalLight intensity={0.5} position={[5, 5, 5]} />
           <pointLight intensity={1} position={[0,0,5]} />
@@ -106,7 +105,8 @@ function App() {
           <OrbitControls enableZoom={false} />
         </Canvas>
       </div>
-      <div className="bottomDivDev flex" style={{position:"absolute",bottom:"0px"}}>
+    </div>
+      <div className="bottomDivDev flex">
         <h2>Why Choose Coca Cola</h2>
         <h3>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore est beatae deleniti quia, ratione cumque expedita enim perferendis. Ex animi rerum sequi eum voluptas officia placeat dignissimos error doloribus cumque!
         Quasi volrror similique maiores ipsa. Sunt, beuae quasi sint odit nulla aliquid tempore sequi eius ea aliquam. Eveniet?

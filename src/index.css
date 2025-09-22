@@ -2,8 +2,89 @@
     margin: 0;padding: 0;
 }
 
-body , #root{
+body, #root {
     height: 200vh;
     width: 100vw;
     overflow-x: hidden;
+    background: #212121;
+    color: antiquewhite;
+}
+
+.upperDiv {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+h1 {
+    position: absolute;
+    font-size: 16em;
+    display: flex;
+    margin: auto;
+}
+
+.buttons{
+    border: none;
+    outline: none;
+    background-color: brown;
+    color: white;
+    padding: 1em 2em;
+    margin: 0 2em ;
+}
+.buttons {
+    border: none;
+    outline: none;
+    background-color: #FFC107;
+    color: black;
+    padding: 0.8em 2em;
+    margin: 0 2em;
+    border-radius: 10px;
+    box-shadow: 2px 2px 4px rgb(0 0 0 / 25%);
+    letter-spacing: 2px;
+    font-family: cursive;
+    cursor: pointer;
+    transition: 0.5s;
+    position: relative;
+}
+.buttons:hover{
+    box-shadow: 0px 0px 10px rgb(255 255 255 / 50%);
+    transition: 0.5s;
+}
+
+.buttons::before {
+    content: "";
+    display: block;
+    width: 0%;
+    background-color: blue;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 10px;
+    opacity: 1;
+    transition: 0.5s;
+}
+
+.buttons:hover::before{
+    opacity: 0.2;
+    width: 100%;
+    transition: 0.5s;
+}
+
+.b1{ color: white; background-color: black; }
+.b2{ color: white; background-color: red; }
+.b3{ color: black; background-color: white; }
+
+.bottomDivDev.flex {
+    height: 100vh;
+    width: 50vw;
+    position: absolute;
+    right: 0;
+    padding-right: 7em;
+    display: flex
+;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
 }
